@@ -1,12 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/rootLayout";
 import CardPageController from "./modules/cardPage";
+import ErrorElement from "./components/errorElement/ErrorElement";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <div>Some error occured!!!</div>,
+    errorElement: <ErrorElement />,
     children: [
       {
         path: "/",
