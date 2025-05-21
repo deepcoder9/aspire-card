@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { ChevronDown } from "../../assets/icons";
 import React from "react";
+import { useCardStore } from "../../store/cardStore";
 
 const AccordionItem = ({
   title,
@@ -15,6 +16,13 @@ const AccordionItem = ({
   isOpen: boolean;
   toggle: () => void;
 }) => {
+  const currentCard = useCardStore((state) => state.getCurrentCard());
+  const getCardTransactions = useCardStore(
+    (state) => state.getCardTransactions
+  );
+
+  const transactions = getCardTransactions(currentCard?.id || "");
+
   return (
     <div>
       <div style={{ zIndex: 9 }} className="relative border border-gray-200 rounded-lg bg-white">
@@ -43,7 +51,7 @@ const AccordionItem = ({
           <div className="p-4 border-t border-gray-200">{children}</div>
         </div>
       </div>
-      {isOpen && title === "Recent transactions" && (
+      {isOpen && title === "Recent transactions" && transactions.length > 0 && (
         <div
           style={{ zIndex: 1 }}
           className="pt-5 p-4 text-center border bg-[#EDFFF5] border-[#DDFFEC] cursor-pointer border-t-0 rounded-b-lg relative mt-[-4px] p-[18px]"
