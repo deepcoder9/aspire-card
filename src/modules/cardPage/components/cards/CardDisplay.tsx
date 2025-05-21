@@ -44,7 +44,7 @@ const CardDisplay = ({
           </span>
         </div>
       )}
-      <div className="relative bg-[#01D167] md:p-6 pt-8 text-white rounded-xl md:rounded-xl rounded-tr-none">
+      <div className="relative bg-[#01D167] p-6 pt-8 text-white rounded-xl md:rounded-xl rounded-tr-none">
         <div className="w-full flex justify-end items-center">
           <img src={AspireLogoWhite} alt="Aspire Logo" />
         </div>
