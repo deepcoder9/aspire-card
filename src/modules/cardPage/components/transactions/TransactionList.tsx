@@ -17,14 +17,6 @@ const TransactionList = ({ transactions }: TransactionListProps) => {
           <TransactionItem key={transaction.id} transaction={transaction} />
         ))
       )}
-
-      {transactions.length > 0 && (
-        <div className="pt-4 pb-2 text-center">
-          <button className="text-green-500 font-medium hover:underline">
-            View all card transactions
-          </button>
-        </div>
-      )}
     </div>
   );
 };

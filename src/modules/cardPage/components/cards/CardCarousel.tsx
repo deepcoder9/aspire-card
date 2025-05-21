@@ -62,7 +62,7 @@ const CardCarousel = () => {
           </span>
         </div>
       )}
-      <div className="relative w-full md:my-12">
+      <div className="relative w-full md:my-12 md:mt-8">
         <div className="relative" {...handlers}>
           <div className="overflow-hidden w-full">
             <div

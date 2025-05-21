@@ -1,14 +1,13 @@
 import { useCallback, useMemo } from "react";
 import { useCardStore } from "../../../../store/cardStore";
-import {
-  FreezeIcon,
-  SpendLimitIcon,
-  GPay,
-  ReplaceCardIcon,
-  CancelCardIcon,
-} from "../../../../assets/icons";
 import ActionButton from "./CardActionButton";
 import useIsMobile from "../../../../hooks/useIsMobile";
+
+import FreezeIcon from "@/assets/svgs/freeze_card.svg";
+import SpendLimitIcon from "@/assets/svgs/set_spend_limit.svg";
+import GPay from "@/assets/svgs/gpay.svg";
+import ReplaceCardIcon from "@/assets/svgs/replace_card.svg";
+import CancelCardIcon from "@/assets/svgs/deactivate_card.svg";
 
 const CardActions = () => {
   const isMobile = useIsMobile();
@@ -25,23 +24,33 @@ const CardActions = () => {
     {
       label: "Freeze card",
       onClick: handleFreezeCard,
-      icon: <FreezeIcon className="w-10 h-10" />,
+      icon: <img src={FreezeIcon} alt="Freeze Icon" className="w-8 h-8" />,
     },
     {
       label: "Set spend limit",
-      icon: <SpendLimitIcon className="w-10 h-10" />,
+      icon: (
+        <img src={SpendLimitIcon} alt="Spend Limit Icon" className="w-8 h-8" />
+      ),
     },
     {
       label: "Add to GPay",
-      icon: <GPay className="w-10 h-10" />,
+      icon: <img src={GPay} alt="GPay Icon" className="w-8 h-8" />,
     },
     {
       label: "Replace card",
-      icon: <ReplaceCardIcon className="w-10 h-10" />,
+      icon: (
+        <img
+          src={ReplaceCardIcon}
+          alt="Replace Card Icon"
+          className="w-8 h-8"
+        />
+      ),
     },
     {
       label: "Cancel card",
-      icon: <CancelCardIcon className="w-10 h-10" />,
+      icon: (
+        <img src={CancelCardIcon} alt="Cancel Card Icon" className="w-8 h-8" />
+      ),
     },
   ];
 
@@ -61,7 +70,7 @@ const CardActions = () => {
   return (
     <div
       style={isMobile ? { borderRadius: "20px 20px 0 0" } : {}}
-      className="w-full md:mt-4 bg-gray-200 p-4 rounded-t-xl md:rounded-xl"
+      className="w-full md:mt-4 bg-[#EDF3FF] p-4 rounded-t-xl md:rounded-xl"
     >
       <div className="grid grid-cols-5 gap-1">{actions}</div>
     </div>

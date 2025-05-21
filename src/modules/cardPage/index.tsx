@@ -1,11 +1,11 @@
-import { TransactionsIcon } from "../../assets/icons";
-import { CardDetailsIcon } from "../../assets/icons";
 import MainLayout from "../../components/layout/MainLayout";
 import { useCardStore } from "../../store/cardStore";
 import { AccordionItemModal } from "../../types/accordion";
 import CardPageView from "./cardPage.view";
 import CardDetails from "./components/card-details/CardDetails";
 import TransactionList from "./components/transactions/TransactionList";
+import CardIcon from "@/assets/svgs/card_icon.svg";
+import TransactionIcon from "@/assets/svgs/transaction_icon.svg";
 
 const CardPageController = () => {
   const currentCard = useCardStore((state) => state.getCurrentCard());
@@ -21,12 +21,12 @@ const CardPageController = () => {
   const accordionItems: AccordionItemModal[] = [
     {
       title: "Card details",
-      icon: <CardDetailsIcon className="w-6 h-6" />,
+      icon: <img src={CardIcon} alt="Card Icon" />,
       component: <CardDetails currentCard={currentCard} />,
     },
     {
       title: "Recent transactions",
-      icon: <TransactionsIcon className="w-6 h-6" />,
+      icon: <img src={TransactionIcon} alt="Transactions Icon" />,
       component: <TransactionList transactions={transactions} />,
     },
   ];

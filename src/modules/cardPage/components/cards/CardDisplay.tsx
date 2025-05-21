@@ -1,7 +1,10 @@
-import { AspireLogo, Eye, VisaLogo } from "../../../../assets/icons";
+import { Eye } from "../../../../assets/icons";
 import { Card } from "../../../../types";
 import { formatCardNumber, formatMaskedCardNumber } from "../../../../utils/helpers";
 import useIsMobile from "../../../../hooks/useIsMobile";
+import AspireLogoWhite from "../../../../assets/svgs/aspire_logo_white.svg";
+import VisaLogo from "../../../../assets/svgs/visa_logo.svg";
+
 interface CardDisplayProps {
   card: Card;
   handleShowCardNumber: () => void;
@@ -27,7 +30,7 @@ const CardDisplay = ({
 
   return (
     <div
-      className={`mt-5 md:mt-0 w-full max-w-md mx-auto rounded-xl md:rounded-xl rounded-tr-none shadow-lg overflow-hidden ${getCardOpacity()} transition-opacity duration-300`}
+      className={`mt-5 md:mt-0 w-full p-2 md:p-0 max-w-md mx-auto rounded-xl md:rounded-xl rounded-tr-none shadow-lg overflow-hidden ${getCardOpacity()} transition-opacity duration-300`}
     >
       {isMobile && (
         <div
@@ -41,10 +44,9 @@ const CardDisplay = ({
           </span>
         </div>
       )}
-      <div className="relative bg-green-400 p-6 pt-8 text-white rounded-xl md:rounded-xl rounded-tr-none">
+      <div className="relative bg-[#01D167] md:p-6 pt-8 text-white rounded-xl md:rounded-xl rounded-tr-none">
         <div className="w-full flex justify-end items-center">
-          <AspireLogo className="w-8 h-8" />
-          <div className="text-xl text-white">Aspire</div>
+          <img src={AspireLogoWhite} alt="Aspire Logo" />
         </div>
 
         <div className="mt-4 mb-4">
@@ -76,7 +78,7 @@ const CardDisplay = ({
             </div>
           </div>
           <div className="h-8">
-            <VisaLogo className="w-18 h-full" />
+            <img src={VisaLogo} alt="Visa Logo" />
           </div>
         </div>
       </div>

@@ -18,11 +18,11 @@ const NavItem = ({ icon, label, active = false, onClick }: NavItemProps) => {
   };
 
   const acitveColor = active ? "text-white" : "text-blue-300";
-  const textColor = active ? "#00D54B" : "white";
+  const textColor = active ? "#00D54B" : "#DDDDDD";
 
   return (
     <div
-      className={`flex flex-col md:gap-2 md:flex-row cursor-pointer justify-center md:justify-start items-center py-4 px-6 ${acitveColor}`}
+      className={`flex flex-col gap-0 md:gap-4 md:flex-row cursor-pointer justify-center md:justify-start items-center py-4 md:py-10 px-1 md:px-6 ${acitveColor}`}
       onClick={handleNavBarClick}
     >
       <div className="mb-1 md:mb-0">{icon}</div>

@@ -11,7 +11,7 @@ const ActionButton = ({ icon, label, onClick }: ActionButtonProps) => {
       onClick={onClick}
     >
       <div className="mb-2">{icon}</div>
-      <div className="text-center text-xs text-gray-600 break-words">
+      <div className="text-center text-xs text-[#0C365A] break-words">
         {label}
       </div>
     </div>

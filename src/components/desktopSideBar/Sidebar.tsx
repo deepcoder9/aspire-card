@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import {
-  Home,
-  CreditCard,
-  Wallet,
-  Settings,
-  AspireLogo,
-  ProfileIcon,
-} from "../../assets/icons";
+import AspireLogoGreen from "./../../assets/svgs/aspire_logo_green.svg";
 import NavItem from "../mobileNavBar/NavItem";
+import HomeIcon from "@/assets/svgs/home.svg";
+import CardIcon from "@/assets/svgs/card.svg";
+import PaymentsIcon from "@/assets/svgs/payments.svg";
+import CreditIcon from "@/assets/svgs/credit.svg";
+import AccountIcon from "@/assets/svgs/account.svg";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -18,21 +16,20 @@ const Sidebar = () => {
   );
 
   const iconMap = {
-    Home: Home,
-    Cards: CreditCard,
-    Payments: Wallet,
-    Credit: Settings,
-    Settings: ProfileIcon,
+    Home: <img src={HomeIcon} alt="Home Icon" />,
+    Cards: <img src={CardIcon} alt="Card Icon" />,
+    Payments: <img src={PaymentsIcon} alt="Wallet Icon" />,
+    Credit: <img src={CreditIcon} alt="Settings Icon" />,
+    Settings: <img src={AccountIcon} alt="Profile Icon" />,
   };
 
   return (
     <div className="hiddenflex flex-col h-full bg-[#0B2B4B] w-64 fixed left-0 top-0 bottom-0">
       <div className="p-6">
         <div className="flex font-semibold text-2xl text-[#00D54B] items-center gap-2">
-          <AspireLogo className="w-12 h-12" />
-          <div>aspire</div>
+          <img src={AspireLogoGreen} alt="Aspire Logo" />
         </div>
-        <div className="text-[#6b7280] text-sm mt-2">
+        <div className="text-[#FFFFFF] opacity-30 text-sm mt-2">
           <p>
             Trusted way of banking for 3,000+ SMEs and startups in Singapore
           </p>
@@ -45,12 +42,7 @@ const Sidebar = () => {
           return (
             <NavItem
               key={item}
-              icon={
-                <Icon
-                  className="w-6 h-6"
-                  color={active === item ? "#00D54B" : "white"}
-                />
-              }
+              icon={Icon}
               label={item}
               active={active === item}
               onClick={() => setActive(item)}
