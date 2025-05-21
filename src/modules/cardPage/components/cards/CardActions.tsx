@@ -5,7 +5,7 @@ import useIsMobile from "../../../../hooks/useIsMobile";
 
 import FreezeIcon from "@/assets/svgs/freeze_card.svg";
 import SpendLimitIcon from "@/assets/svgs/set_spend_limit.svg";
-import GPay from "@/assets/svgs/gpay.svg";
+import GPay from "@/assets/svgs/GPay.svg";
 import ReplaceCardIcon from "@/assets/svgs/replace_card.svg";
 import CancelCardIcon from "@/assets/svgs/deactivate_card.svg";
 
